@@ -38,7 +38,7 @@
     </div>
 
     <div class="form__input">
-      <input type="submit" value="Confirm">
+      <input type="submit" value="Confirm" class="form__input--button">
     </div>
   </main>
  </div>
@@ -102,6 +102,10 @@ header {
   background-repeat: no-repeat;
 }
 
+main {
+  margin-top: 60px;
+}
+
 .form__input{
   display: flex;
   flex-direction: column;
@@ -111,5 +115,22 @@ header {
 .form__input label {
   text-transform: uppercase;
   margin-bottom: 5px;
+}
+
+.form__input input{
+  border: hsl(270, 3%, 87%) solid 1px;
+  border-radius: 10px;
+  padding: 15px;
+  color: hsl(270, 3%, 87%);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.form__input--button{
+  background-color: hsl(278, 68%, 11%);
+  color: white !important;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: hsl(278, 68%, 11%) !important;
+  margin-top: 10px;
 }
 </style>
