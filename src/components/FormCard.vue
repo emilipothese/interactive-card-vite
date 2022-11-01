@@ -1,4 +1,5 @@
 <template>
+<div>
   <header>
     <section class="card__front">
       <img class="card__front__logo" src="../assets/card-logo.svg" alt="">
@@ -13,6 +14,34 @@
       <p class="card__back__number">{{ card.backNumber }}</p>
     </section>
   </header>
+
+  <main>
+    <div class="form__input">
+      <label for="name">Cardholder name</label>
+      <input v-model="card.name" placeholder="edit me" id="name"/>
+    </div>
+
+    <div class="form__input">
+      <label for="number">Card number</label>
+      <input v-model="card.number" placeholder="edit me" id="number"/>
+    </div>
+
+    <div class="form__input">
+      <label for="end">Exp. date (mm/yy)</label>
+      <input v-model="card.endMonth" placeholder="edit me" id="end"/>
+      <input v-model="card.endYear" placeholder="edit me" id="end"/>
+    </div>
+
+    <div class="form__input">
+      <label for="cvc">CVC</label>
+      <input v-model="card.backNumber" placeholder="edit me" id="cvc"/>
+    </div>
+
+    <div class="form__input">
+      <input type="submit" value="Confirm">
+    </div>
+  </main>
+ </div>
 </template>
 
 <script>
@@ -35,7 +64,9 @@ export default {
 header {
   background-image: url('../assets/bg-main-desktop.png');
   background-size: cover;
-
+  width: 100%;
+  color: white;
+  padding-top: 30px;
 }
 
 .card__front {
@@ -51,7 +82,7 @@ header {
 .card__front__number {
   margin: 30px 0px 0px 0px;
   font-size: 1.3rem;
-  font-weight: 800;
+  font-weight: 500;
 }
 
 .card__front__infos {
@@ -69,6 +100,16 @@ header {
   background-image: url('../assets/bg-card-back.png');
   background-size: contain;
   background-repeat: no-repeat;
-  padding: 20px 30px;
+}
+
+.form__input{
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px;
+}
+
+.form__input label {
+  text-transform: uppercase;
+  margin-bottom: 5px;
 }
 </style>

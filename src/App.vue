@@ -9,7 +9,4 @@ import FormCard from './components/FormCard.vue'
 </template>
 
 <style>
-  section {
-    width: 400px;
-  }
 </style>
