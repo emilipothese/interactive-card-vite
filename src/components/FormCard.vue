@@ -3,38 +3,46 @@
   <header>
     <section class="card__front">
       <img class="card__front__logo" src="../assets/card-logo.svg" alt="">
-      <p class="card__front__number">{{ card.number }}</p>
+      <p v-if="newCard.number" class="card__front__number">{{ newCard.number }}</p>
+      <p v-else class="card__front__number">{{ card.number }}</p>
       <div class="card__front__infos">
-        <p>{{ card.name }}</p>
-        <p>{{ card.endMonth }} / {{ card.endYear }}</p>
+        <p v-if="newCard.name">{{ newCard.name }}</p>
+        <p v-else>{{ card.name }}</p>
+        <p>
+          <span v-if="newCard.endMonth">{{ newCard.endMonth }}</span>
+          <span v-else>{{ card.endMonth }}</span> /
+          <span v-if="newCard.endYear">{{ newCard.endYear }}</span>
+          <span v-else>{{ card.endYear }}</span>
+        </p>
       </div>
     </section>
 
     <section class="card__back">
-      <p class="card__back__number">{{ card.backNumber }}</p>
+      <p v-if="newCard.backNumber" class="card__back__number">{{ newCard.backNumber }}</p>
+      <p v-else class="card__back__number">{{ card.backNumber }}</p>
     </section>
   </header>
 
   <main>
     <div class="form__input">
       <label for="name">Cardholder name</label>
-      <input type="text" placeholder="Micheal Scott" v-model="card.name" id="name"/>
+      <input type="text" placeholder="Micheal Scott" v-model="newCard.name" id="name"/>
     </div>
 
     <div class="form__input">
       <label for="number">Card number</label>
-      <input type="number" placeholder="1234 5678 9123 0000" v-model="card.number" id="number"/>
+      <input type="text" placeholder="1234 5678 9123 0000" v-model="newCard.number" id="number"/>
     </div>
 
     <div class="form__input">
       <label for="end">Exp. date (mm/yy)</label>
-      <input type="text" placeholder="MM" v-model="card.endMonth" id="end"/>
-      <input type="text" placeholder="YY" v-model="card.endYear" id="end"/>
+      <input type="text" placeholder="MM" v-model="newCard.endMonth" id="end"/>
+      <input type="text" placeholder="YY" v-model="newCard.endYear" id="end"/>
     </div>
 
     <div class="form__input">
       <label for="cvc">CVC</label>
-      <input type="number" placeholder="123" v-model="card.backNumber" id="cvc"/>
+      <input type="text" placeholder="123" v-model="newCard.backNumber" id="cvc"/>
     </div>
 
     <div class="form__input">
@@ -54,6 +62,13 @@ export default {
         endMonth: '00',
         endYear: '00',
         backNumber: '000'
+      },
+      newCard: {
+        number: '',
+        name: '',
+        endMonth: '',
+        endYear: '',
+        backNumber: ''
       }
     };
   },
