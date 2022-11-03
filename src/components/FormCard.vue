@@ -36,8 +36,10 @@
 
     <div class="form__input">
       <label for="end">Exp. date (mm/yy)</label>
-      <input type="text" placeholder="MM" v-model="newCard.endMonth" id="end"/>
-      <input type="text" placeholder="YY" v-model="newCard.endYear" id="end"/>
+      <div class="form__input--flex">
+        <input type="text" placeholder="MM" v-model="newCard.endMonth" id="end"/>
+        <input type="text" placeholder="YY" v-model="newCard.endYear" id="end"/>
+      </div>
     </div>
 
     <div class="form__input">
@@ -129,6 +131,12 @@ header {
   position: absolute;
   left: 60%;
   transform: translate(-50%, 0);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card__back p {
+ margin: 70px 40px 0 0;
 }
 
 main {
@@ -149,9 +157,14 @@ main {
 .form__input input{
   border: hsl(270, 3%, 87%) solid 1px;
   border-radius: 10px;
-  padding: 15px;
+  padding: 15px 0 15px 15px;
   color: hsl(270, 3%, 87%);
   font-family: 'Space Grotesk', sans-serif;
+}
+
+.form__input--flex {
+  display: flex;
+  justify-content: space-between;
 }
 
 .form__input--button{
