@@ -80,27 +80,37 @@ header {
   background-image: url('../assets/bg-main-desktop.png');
   background-size: cover;
   width: 100%;
+  height: 200px;
   color: white;
   padding-top: 30px;
+  position: relative;
 }
 
 .card__front {
   background-image: url('../assets/bg-card-front.png');
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 164px;
+  position: absolute;
+  left: 40%;
+  top: 130px;
+  transform: translate(-50%, 0);
+  z-index: 1000;
 }
 
 .card__front__logo{
-  width: 60px;
+  margin: 15px 0 0 15px;
+  width: 55px;
 }
 
 .card__front__number {
-  margin: 30px 0px 0px 0px;
+  margin: 40px 0px 0px 15px;
   font-size: 1.3rem;
   font-weight: 500;
 }
 
 .card__front__infos {
+  margin: 0 15px;
   display: flex;
   justify-content: space-between;
   text-transform: uppercase;
@@ -113,12 +123,16 @@ header {
 
 .card__back {
   background-image: url('../assets/bg-card-back.png');
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 164px;
+  position: absolute;
+  left: 60%;
+  transform: translate(-50%, 0);
 }
 
 main {
-  margin-top: 60px;
+  margin-top: 120px;
 }
 
 .form__input{
