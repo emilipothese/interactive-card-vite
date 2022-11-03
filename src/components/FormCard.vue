@@ -18,23 +18,23 @@
   <main>
     <div class="form__input">
       <label for="name">Cardholder name</label>
-      <input v-model="card.name" placeholder="edit me" id="name"/>
+      <input type="text" placeholder="Micheal Scott" v-model="card.name" id="name"/>
     </div>
 
     <div class="form__input">
       <label for="number">Card number</label>
-      <input v-model="card.number" placeholder="edit me" id="number"/>
+      <input type="number" placeholder="1234 5678 9123 0000" v-model="card.number" id="number"/>
     </div>
 
     <div class="form__input">
       <label for="end">Exp. date (mm/yy)</label>
-      <input v-model="card.endMonth" placeholder="edit me" id="end"/>
-      <input v-model="card.endYear" placeholder="edit me" id="end"/>
+      <input type="text" placeholder="MM" v-model="card.endMonth" id="end"/>
+      <input type="text" placeholder="YY" v-model="card.endYear" id="end"/>
     </div>
 
     <div class="form__input">
       <label for="cvc">CVC</label>
-      <input v-model="card.backNumber" placeholder="edit me" id="cvc"/>
+      <input type="number" placeholder="123" v-model="card.backNumber" id="cvc"/>
     </div>
 
     <div class="form__input">
@@ -50,7 +50,7 @@ export default {
     return {
       card: {
         number: '0000 0000 0000 0000',
-        name: 'Jane Appleseed',
+        name: 'Micheal Scott',
         endMonth: '00',
         endYear: '00',
         backNumber: '000'
