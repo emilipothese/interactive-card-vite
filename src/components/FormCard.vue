@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="grid">
   <header>
     <section class="card__front">
       <img class="card__front__logo" src="../assets/card-logo.svg" alt="">
@@ -77,7 +77,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 header {
   background-image: url('../assets/bg-main-desktop.png');
   background-size: cover;
@@ -174,5 +174,36 @@ main {
   font-weight: 500;
   border: hsl(278, 68%, 11%) !important;
   margin-top: 10px;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    display: flex;
+    align-items: center;
+  }
+
+  header {
+    height: 100vh;
+    width: 40%;
+    color: white;
+    padding-top: 30px;
+    position: relative;
+  }
+
+  main {
+    margin-top: 0px;
+  }
+
+  .card__front {
+    left: 80%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+  }
+
+  .card__back {
+    left: 90%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+  }
 }
 </style>
