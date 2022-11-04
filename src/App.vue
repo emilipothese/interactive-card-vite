@@ -1,12 +1,19 @@
-<script setup>
-import FormCard from './components/FormCard.vue'
-import ConfirmationCard from './components/ConfirmationCard.vue'
-</script>
-
 <template>
   <FormCard />
   <ConfirmationCard />
 </template>
+
+<script>
+import FormCard from './components/FormCard.vue'
+import ConfirmationCard from './components/ConfirmationCard.vue'
+
+export default {
+  components: {
+    FormCard,
+    ConfirmationCard
+  }
+}
+</script>
 
 <style>
 </style>
