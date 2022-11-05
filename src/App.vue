@@ -1,6 +1,5 @@
 <template>
   <FormCard />
-  <ConfirmationCard />
 </template>
 
 <script>
